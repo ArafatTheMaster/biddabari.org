@@ -1,0 +1,241 @@
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    h1 {
+      background: #f0f4f9;              /* সাদা ব্যাকগ্রাউন্ড */
+
+      border: 1px solid #ddd;        /* হালকা ধূসর বর্ডার */
+      border-radius: 10px;           /* কোণা গোল */
+      padding: 20px;                 /* ভেতরের স্পেস */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* হালকা শেডো */
+      max-width: 600px;              /* চওড়া সীমাবদ্ধ */
+      margin: 20px auto;             /* পেজের মাঝে সেন্টার */
+      font-size: 26px;               /* লেখার সাইজ */
+      text-align: center;            /* টেক্সট সেন্টার */
+    }
+
+
+    .accordion {
+      max-width: 600px;
+      margin: auto;
+    }
+      
+    /* Bangla */
+    .accordion-item.bangla .accordion-title {
+      background: #d8b3d4;
+      color: #000;
+    }
+    .accordion-item.bangla .accordion-content {
+      background: #f5e8f2;
+    }
+
+    /* English */
+    .accordion-item.english .accordion-title {
+      background: #f0ea9d;
+      color: #000;
+    }
+    .accordion-item.english .accordion-content {
+      background: #fdfbe3;
+    }
+
+    /* Mathematics */
+    .accordion-item.math .accordion-title {
+      background: #ada5d1;
+      color: #000;
+    }
+    .accordion-item.math .accordion-content {
+      background: #e8e4f5;
+    }
+
+    /* Bangladesh Affairs */
+    .accordion-item.bangladesh .accordion-title {
+      background: #74c37c;
+      color: #000;
+    }
+    .accordion-item.angladesh .accordion-content {
+      background: #e0f5e2;
+    }
+
+    /* International Affairs */
+    .accordion-item.international .accordion-title {
+      background: #78cbdf;
+      color: #000;
+    }
+    .accordion-item.international .accordion-content {
+      background: #e5f8fc;
+    }
+
+    /* ICT */
+    .accordion-item.ict .accordion-title {
+      background: #aad04b;
+      color: #000;
+    }
+    .accordion-item.ict .accordion-content {
+      background: #f2fce5;
+    }
+
+    /* General Science */
+    .accordion-item.science .accordion-title {
+      background: #c7c8ce;
+      color: #000;
+    }
+    .accordion-item.science .accordion-content {
+      background: #f5f6f7;
+    }
+
+    /* Optional */
+    .accordion-item.optional .accordion-title {
+      background: #f48ca1;
+      color: #000;
+    }
+    .accordion-item.optional .accordion-content {
+      background: #fde9ed;
+    }
+  
+
+    .accordion-item {
+
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-title {
+
+
+      font-size: 18px;
+      padding: 20px;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .accordion-item .accordion-title:hover {
+      filter: brightness(80%);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      padding: 0 20px;
+      background: #f0fefc;
+    }
+
+    .accordion-content ul {
+      padding-left: 0;
+      margin: 15px 0;
+      list-style: none;
+    }
+
+    .accordion-content li {
+      margin-bottom: 10px;
+    }
+
+    .video-button.disabled {
+      pointer-events: none;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .video-button {
+      background-color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-weight: bold;
+      color: #008778;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .accordion-content li:nth-child(even) .video-button {
+      background-color: #fff5d8;
+    }
+
+    .video-button:hover {
+      background-color: #d6f5ef;
+      transform: scale(1.01);
+    }
+
+    .accordion-title::after {
+      content: '+';
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-title::after {
+      content: '-';
+      transform: rotate(180deg);
+    }
+
+    /* Inner lecture layout */
+    .lecture-label { flex-grow: 1; text-align: left; }
+    .lecture-actions { display: flex; gap: 6px; }
+    .exam-btn, .sheet-btn {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      border: 1px solid #ccc;
+    }
+    .exam-btn { background:#fff3cd; color:#856404; }
+    .sheet-btn { background:#e6f7ff; color:#005f8a; }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 10px;
+      max-width: 800px;
+      width: 90%;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .modal-content iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: red;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
